@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tamil Newyear</title>
+    <style>
+	*{
+	padding:0px;
+	margin:0px;
+	box-sizing:border-box;
+	}
+	.year{
+	background-color:#000000;
+	padding:30px;
+	}
+	.container{
+	width:90%;
+	margin:auto;
+	}
+	.row{
+	 display:flex;
+	 gap:2%;
+	 }
+	 .col{
+	 width:50%;
+	 }
+	 .col1{
+	 width:50%;
+
+	 }
+	 .inner{
+	 	 display:flex;
+		 justify-content:space-between;
+		 align-items:center;
+		 padding-top:40px;
+		 }
+	 img{
+	 max-width:100%;
+	 }
+	 .head{
+	 text-align:center;
+	 font-size:45px;
+	 color:#b3b300;
+	 }
+	 .first{
+	 color:#b3b300;
+	 border:2px solid #e6ffff;
+	 box-shadow:5px 2px  #e6ffff;
+	 padding:20px;
+	 }
+
+	 @media(min-width:320px){
+        .container{
+		width:100%;
+		}
+		.row{
+		display:flex;
+		flex-wrap:wrap;
+		}
+		 .head{
+	 text-align:center;
+	 font-size:25px;
+	 color:#b3b300;
+	 }
+		col{
+		width:100%;
+		}
+		col1{
+		width:100%;
+		}
+		.inner{
+		display:flex;
+		flex-wrap:wrap;
+		}
+		.first{
+		width:100%;
+		}
+		}
+    @media(min-width:690px){
+        .container{
+		width:100%;
+		}
+		.row{
+		display:flex;
+		flex-wrap:wrap;
+		}
+		col{
+		width:100%;
+		}
+		col1{
+		width:100%;
+		}
+	  .inner{
+		display:flex;
+		flex-wrap:wrap;
+		}
+		.first{
+		width:100%;
+		}
+		}
+		@media(min-width:1020px){
+        .container{
+		width:90%;
+	margin:auto;
+		}
+		.row{
+		display:flex;
+		flex-wrap:nowrap;
+		}
+		col{
+		width:50%;
+		}
+		col1{
+		width:50%;
+		}
+		.inner{
+		display:flex;
+		flex-wrap:nowrap;
+		}
+
+		}
+		
+	 
+
+    </style>
+</head>
+<body>
+    <section class="year">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="img/img.jpg">
+                </div>
+                <div class="col1">
+                    <h1 class="head">Counting for tamil newyear</h1>
+					<div class="inner">
+                   <div class="first">
+				   <h1 class="color">DAY</h1>
+                    <div id="outday"></div>
+					</div>
+					<div class="first">
+					  <h1>HOUR</h1>
+                    <div id="outhour"></div>
+                    </div>
+					<div class="first">
+					  <h1>MINUTES</h1>
+                    <div id="outmin"></div>
+                    </div>
+					<div class="first">
+					  <h1>SECONDS</h1>
+                    <div id="outsec"></div>
+                </div>
+				</div>
+             </div>
+			 </div>
+        </div>
+    </section>
+    <script>
+        setInterval(() =>{
+		
+        let res = document.getElementById('outday');
+        let res1 = document.getElementById('outhour');
+        let res2 = document.getElementById('outmin');
+        let res3 = document.getElementById('outsec');
+        let date = new Date('Apr 14, 2023 12:00:00');
+        let counterDate = date.getTime();
+        let current = new Date();
+        let currentDate = current.getTime();
+        let differ = counterDate - currentDate;
+        let days = Math.floor(differ / (1000*60*60*24));
+        let hours = Math.floor((differ % (1000*60*60*24)) / (1000*60*60));
+        let minutes = Math.floor((differ % (1000*60*60)) / (1000*60));
+        let seconds = Math.floor((differ % (1000*60)) / 1000);
+        res.innerText = `${days}`
+        res1.innerText=`${hours}`
+        res2.innerText=`${minutes}` 
+        res3.innerText=`${seconds}`
+        },1000)
+    </script>
+</body>
+</html>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+   </script>
